@@ -1,36 +1,34 @@
 # Developer Tools Portal
 
-A premium, high-performance, responsive suite of client-side developer utility tools. The project acts as a monorepo portal where each tool is structured as an independent sub-project with its own styles and scripts.
+A premium, high-performance developer utility suite built with **Next.js**, **Tailwind CSS**, and **Shadcn UI**. All tools run entirely client-side — zero server uploads, maximum privacy.
 
 Inspired by [W3Schools Developer Tools](https://www.w3schools.com/tools/index.php).
 
 ---
 
 ## 🎨 Features & Design System
-- **Modern Aesthetics**: Curated color palettes with HSL-tailored colors, deep glassmorphism dark-mode gradients, and crisp typography (Plus Jakarta Sans).
-- **Search & Filters**: Real-time filtering by category and instant title search in the central dashboard.
-- **Privacy & Security**: All computations are performed entirely on the client-side. Zero server uploads.
-- **Transitions**: Smooth micro-animations on interactive cards, copy-to-clipboard, status changes, and filter transitions.
+
+- **Modern Stack**: Next.js 16 (App Router), TypeScript, Tailwind CSS v4, Shadcn UI
+- **Premium Dark-Mode UI**: Deep gradients, glassmorphism panels, Lucide icons, Plus Jakarta Sans typography
+- **Search & Filters**: Real-time search and category tabs on the dashboard
+- **Privacy First**: All computations run in-browser — nothing leaves your machine
+- **Micro-Animations**: Smooth hover effects, transitions, and interactive feedback
 
 ---
 
 ## 🛠️ Built-in Tools
 
-### 1. Base64 & URL Encoder/Decoder (`tools/encoder-decoder/`)
-- Encodes or Decodes strings to/from Base64 standard format.
-- Encodes or Decodes URL strings safe for browser requests.
-- Live character counting, input paste, and output copy capability.
+### 1. Base64 & URL Encoder/Decoder
+Encode or decode strings to/from Base64 or URL-safe format with live character stats.
 
-### 2. JSON Formatter & Validator (`tools/json-tool/`)
-- Live syntax checks and validators giving line-by-line feedback.
-- Format strings with customizeable space/tab indentation settings.
-- Minify strings down to compact lines.
-- Mock loading template data option.
+### 2. JSON Formatter & Validator
+Format, minify, and validate JSON with real-time syntax error feedback and configurable indentation.
 
-### 3. Password & UUID Generator (`tools/generator-tool/`)
-- Secure password builder with character configurations and custom length sliders.
-- Real-time password complexity and entropy indicator (Weak / Medium / Strong).
-- Batch UUID v4 generator with uppercase and hyphen settings.
+### 3. Password & UUID Generator
+Generate secure passwords with strength indicators and batch UUID v4 strings with customizable formatting.
+
+### 4. QR Code Generator
+Generate custom QR codes with configurable resolution, colors, and error correction. Download as PNG.
 
 ---
 
@@ -38,32 +36,52 @@ Inspired by [W3Schools Developer Tools](https://www.w3schools.com/tools/index.ph
 
 ```
 developer-tools/
-├── README.md
-├── index.html          # Main portal dashboard
-├── style.css           # Global design system & core styling variables
-├── app.js              # Live portal search & category filter script
-└── tools/              # Sub-tools directory
-    ├── encoder-decoder/
-    │   ├── index.html
-    │   ├── style.css
-    │   └── script.js
-    ├── json-tool/
-    │   ├── index.html
-    │   ├── style.css
-    │   └── script.js
-    └── generator-tool/
-        ├── index.html
-        ├── style.css
-        └── script.js
+├── src/
+│   └── app/
+│       ├── layout.tsx              # Root layout with header/footer
+│       ├── globals.css             # Tailwind CSS + theme tokens
+│       ├── page.tsx                # Dashboard with search & filters
+│       └── tools/
+│           ├── encoder-decoder/
+│           │   └── page.tsx        # Base64 & URL tool
+│           ├── json-tool/
+│           │   └── page.tsx        # JSON formatter & validator
+│           ├── generator-tool/
+│           │   └── page.tsx        # Password & UUID generator
+│           └── qrcode-generator/
+│               └── page.tsx        # QR Code generator
+├── package.json
+├── tailwind.config.ts
+├── tsconfig.json
+└── next.config.ts
 ```
 
 ---
 
-## 🚀 How to Run Locally
+## 🚀 Getting Started
 
-Since this portal runs 100% on the client-side, you can open the main `index.html` directly in your browser:
-1. Open `index.html` in any web browser.
-2. Or run a simple local server using Python, Node, or an extension (e.g. Live Server):
-   ```bash
-   npx serve .
-   ```
+```bash
+# Install dependencies
+npm install
+
+# Run the development server
+npm run dev
+
+# Build for production
+npm run build
+```
+
+Open [http://localhost:3000](http://localhost:3000) to access the portal.
+
+---
+
+## 📦 Tech Stack
+
+| Layer      | Technology                        |
+|------------|-----------------------------------|
+| Framework  | Next.js 16 (App Router)           |
+| Language   | TypeScript                        |
+| Styling    | Tailwind CSS v4, Shadcn UI        |
+| Icons      | Lucide React                      |
+| QR Codes   | qrcode (npm)                      |
+| Fonts      | Plus Jakarta Sans, JetBrains Mono |
