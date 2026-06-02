@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Base64 & URL Encoder/Decoder - DevTools</title>
+  <link rel="stylesheet" href="../../style.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <a href="../../index.html" class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="16 18 22 12 16 6"></polyline>
+          <polyline points="8 6 2 12 8 18"></polyline>
+        </svg>
+        DevTools
+      </a>
+      <ul class="nav-links">
+        <li><a href="../../index.html">&larr; Back to Tools</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <div class="tool-header">
+      <h1 class="tool-title-main">Base64 & URL Encoder / Decoder</h1>
+      <p class="tool-subtitle">Encode or decode strings instantly. All conversions are performed in your browser securely.</p>
+    </div>
+
+    <div class="tool-container">
+      <div class="input-panel">
+        <div class="panel-header">
+          <h3>Input Text</h3>
+          <div class="file-input-wrapper">
+            <button class="action-btn-sm" id="btn-clear-input">Clear</button>
+            <button class="action-btn-sm" id="btn-paste-input">Paste</button>
+          </div>
+        </div>
+        <textarea id="input-text" placeholder="Type or paste your text here..." autofocus></textarea>
+        <div class="panel-footer">
+          <span class="stats-label" id="input-stats">Chars: 0 | Lines: 0</span>
+        </div>
+      </div>
+
+      <div class="options-panel">
+        <div class="options-group">
+          <label class="options-title">Conversion Mode</label>
+          <div class="radio-group">
+            <label class="radio-label">
+              <input type="radio" name="mode" value="encode" checked>
+              <span>Encode</span>
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="mode" value="decode">
+              <span>Decode</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="options-group">
+          <label class="options-title">Algorithm</label>
+          <div class="radio-group">
+            <label class="radio-label">
+              <input type="radio" name="algo" value="base64" checked>
+              <span>Base64</span>
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="algo" value="url">
+              <span>URL Safe</span>
+            </label>
+          </div>
+        </div>
+
+        <button class="primary-btn" id="btn-convert">Convert Now</button>
+      </div>
+
+      <div class="output-panel">
+        <div class="panel-header">
+          <h3>Output Result</h3>
+          <div class="file-input-wrapper">
+            <button class="action-btn-sm" id="btn-copy-output">Copy</button>
+          </div>
+        </div>
+        <textarea id="output-text" readonly placeholder="Result will appear here..."></textarea>
+        <div class="panel-footer">
+          <span class="stats-label" id="output-stats">Chars: 0</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Developer Tools Suite. Running client-side securely.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
